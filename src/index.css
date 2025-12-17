@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for better aesthetics on dark themes */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #27272a; /* zinc-800 */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4f46e5; /* indigo-600 */
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6366f1; /* indigo-500 */
+}
+
+/* Ensure smooth transitions for all elements */
+* {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter, -moz-backdrop-filter, backdrop-filter;
+  transition-duration: 200ms;
+  transition-timing-function: ease-in-out;
+}
+
+/* Basic reset for focus states for accessibility, ensure visible focus */
+:focus {
+  outline: 2px solid theme('colors.indigo.500');
+  outline-offset: 2px;
+}
+
+/* Override for elements that handle their own focus */
+button:focus, a:focus, input:focus, textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px theme('colors.indigo.500');
+}
+
+/* Adjust outline for elements with custom ring styles */
+[class*="focus:ring-"] {
+  outline: none;
+}
